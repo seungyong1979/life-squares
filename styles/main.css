@@ -1,0 +1,1049 @@
+/* 전역 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f39c12;
+    --past-color: #95a5a6;
+    --current-color: #f1c40f;
+    --future-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --background-color: #ffffff;
+    --border-color: #bdc3c7;
+    --hover-color: #3498db;
+    --modal-bg: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 다크 테마 */
+body.dark-theme {
+    --primary-color: #5dade2;
+    --secondary-color: #f4d03f;
+    --past-color: #566573;
+    --current-color: #f7dc6f;
+    --future-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --background-color: #1a1a1a;
+    --border-color: #34495e;
+    --hover-color: #5dade2;
+}
+
+/* 화면 공통 스타일 */
+.screen {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* 초기 설정 화면 */
+#setup-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.setup-container {
+    background: var(--background-color);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.setup-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.setup-container p {
+    margin-bottom: 30px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* 학력 입력 섹션 */
+.education-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: var(--future-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.education-section h3 {
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.education-subtitle {
+    margin-bottom: 20px !important;
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.7;
+    text-align: left;
+}
+
+.education-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.education-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.education-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.color-indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+/* 각 교육 단계별 색상 */
+.color-indicator.daycare {
+    background: #ffe6e6; /* 연한 연분홍 */
+}
+
+.color-indicator.kindergarten {
+    background: #ffb3ba; /* 연분홍 */
+}
+
+.color-indicator.elementary {
+    background: #ffdfba; /* 연주황 */
+}
+
+.color-indicator.middle {
+    background: #ffffba; /* 연노랑 */
+}
+
+.color-indicator.high {
+    background: #baffc9; /* 연초록 */
+}
+
+.color-indicator.university {
+    background: #bae1ff; /* 연하늘 */
+}
+
+.color-indicator.other {
+    background: #e1baff; /* 연보라 */
+}
+
+.period-inputs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.period-input {
+    flex: 1;
+    padding: 6px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 13px;
+    background: var(--background-color);
+    color: var(--text-color);
+    min-width: 0;
+}
+
+.period-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.period-inputs span {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.other-name-input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 13px;
+    background: var(--background-color);
+    color: var(--text-color);
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.other-name-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* 버튼 스타일 */
+.primary-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.primary-btn:hover {
+    background: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0 5px;
+}
+
+.secondary-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* 메인 화면 헤더 */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.main-header h1 {
+    color: var(--primary-color);
+    font-size: 2em;
+}
+
+.year-navigation {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    background: var(--hover-color);
+    transform: scale(1.1);
+}
+
+#year-selector {
+    padding: 10px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.header-info span {
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* 월별 그리드 */
+.months-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.month-square {
+    aspect-ratio: 1;
+    border: 3px solid var(--border-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    min-height: 150px;
+}
+
+.month-square:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.month-square.past {
+    background: var(--past-color);
+    color: white;
+}
+
+.month-square.current {
+    background: var(--current-color);
+    color: var(--text-color);
+    box-shadow: 0 0 20px rgba(241, 196, 64, 0.5);
+}
+
+.month-square.future {
+    background: var(--future-color);
+    color: var(--text-color);
+}
+
+/* 교육 기간 동적 추가 버튼 */
+.education-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.add-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.add-btn:hover {
+    background: #e67e22;
+    transform: translateY(-1px);
+}
+
+.remove-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.remove-btn:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 휴학 기간 스타일 */
+.leave-section {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(186, 225, 255, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(186, 225, 255, 0.3);
+}
+
+.leave-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.leave-label {
+    font-size: 0.85em;
+    font-weight: bold;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.add-leave-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.add-leave-btn:hover {
+    background: #2980b9;
+    transform: translateY(-1px);
+}
+
+.leave-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.leave-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    background: var(--background-color);
+    border-radius: 4px;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.leave-period-input {
+    flex: 1;
+    padding: 4px 6px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 12px;
+    background: var(--background-color);
+    color: var(--text-color);
+    min-width: 0;
+}
+
+.leave-period-input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.remove-leave-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.remove-leave-btn:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+/* 일별 네모에 어린이집 교육 기간 추가 */
+.day-square.education-daycare {
+    background: linear-gradient(135deg, #ffe6e6, #ffcccc);
+    color: #8b0000;
+}
+
+/* 교육 기간 스타일 */
+.month-square.education-daycare {
+    background: linear-gradient(135deg, #ffe6e6, #ffcccc);
+    color: #8b0000;
+}
+
+.month-square.education-kindergarten {
+    background: linear-gradient(135deg, #ffb3ba, #ff9aa1);
+    color: #8b0000;
+}
+
+.month-square.education-elementary {
+    background: linear-gradient(135deg, #ffdfba, #ffd199);
+    color: #8b4500;
+}
+
+.month-square.education-middle {
+    background: linear-gradient(135deg, #ffffba, #ffff99);
+    color: #8b8b00;
+}
+
+.month-square.education-high {
+    background: linear-gradient(135deg, #baffc9, #99ffb3);
+    color: #006400;
+}
+
+.month-square.education-university {
+    background: linear-gradient(135deg, #bae1ff, #99d6ff);
+    color: #00008b;
+}
+
+.month-square.education-other {
+    background: linear-gradient(135deg, #e1baff, #d699ff);
+    color: #4b0082;
+}
+
+.week-square.education-daycare {
+    background: linear-gradient(135deg, #ffe6e6, #ffcccc);
+    color: #8b0000;
+}
+
+.week-square.education-kindergarten {
+    background: linear-gradient(135deg, #ffb3ba, #ff9aa1);
+    color: #8b0000;
+}
+
+.week-square.education-elementary {
+    background: linear-gradient(135deg, #ffdfba, #ffd199);
+    color: #8b4500;
+}
+
+.week-square.education-middle {
+    background: linear-gradient(135deg, #ffffba, #ffff99);
+    color: #8b8b00;
+}
+
+.week-square.education-high {
+    background: linear-gradient(135deg, #baffc9, #99ffb3);
+    color: #006400;
+}
+
+.week-square.education-university {
+    background: linear-gradient(135deg, #bae1ff, #99d6ff);
+    color: #00008b;
+}
+
+.week-square.education-other {
+    background: linear-gradient(135deg, #e1baff, #d699ff);
+    color: #4b0082;
+}
+
+.day-square.education-kindergarten {
+    background: linear-gradient(135deg, #ffb3ba, #ff9aa1);
+    color: #8b0000;
+}
+
+.day-square.education-elementary {
+    background: linear-gradient(135deg, #ffdfba, #ffd199);
+    color: #8b4500;
+}
+
+.day-square.education-middle {
+    background: linear-gradient(135deg, #ffffba, #ffff99);
+    color: #8b8b00;
+}
+
+.day-square.education-high {
+    background: linear-gradient(135deg, #baffc9, #99ffb3);
+    color: #006400;
+}
+
+.day-square.education-university {
+    background: linear-gradient(135deg, #bae1ff, #99d6ff);
+    color: #00008b;
+}
+
+.day-square.education-other {
+    background: linear-gradient(135deg, #e1baff, #d699ff);
+    color: #4b0082;
+}
+
+/* 교육 기간 표시 라벨 컨테이너 */
+.education-labels-container {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-width: calc(100% - 6px);
+}
+
+/* 교육 기간 표시 라벨 */
+.education-label-indicator {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
+    font-size: 0.6em;
+    padding: 1px 4px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    line-height: 1.1;
+}
+
+/* 두 번째 이후 라벨 (보조 라벨) */
+.education-label-indicator.secondary-label {
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 0.55em;
+    opacity: 0.9;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.month-square .month-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.month-square .month-content {
+    font-size: 0.9em;
+    text-align: center;
+    padding: 0 10px;
+    word-break: break-word;
+    overflow: hidden;
+    max-height: 70px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* 주별 화면 */
+.week-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 30px;
+}
+
+.back-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background: #e67e22;
+    transform: translateX(-5px);
+}
+
+.weeks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.week-square {
+    aspect-ratio: 1.2;
+    border: 3px solid var(--border-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    min-height: 120px;
+}
+
+.week-square:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.week-square.past {
+    background: var(--past-color);
+    color: white;
+}
+
+.week-square.current {
+    background: var(--current-color);
+    color: var(--text-color);
+}
+
+.week-square.future {
+    background: var(--future-color);
+    color: var(--text-color);
+}
+
+.week-square .week-name {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.week-square .week-content {
+    font-size: 0.8em;
+    text-align: center;
+    padding: 0 8px;
+    word-break: break-word;
+    overflow: hidden;
+    max-height: 60px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* 일별 화면 */
+.day-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 30px;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.day-square {
+    aspect-ratio: 1;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    min-height: 100px;
+}
+
+.day-square:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.day-square.past {
+    background: var(--past-color);
+    color: white;
+}
+
+.day-square.current {
+    background: var(--current-color);
+    color: var(--text-color);
+    box-shadow: 0 0 15px rgba(241, 196, 64, 0.4);
+}
+
+.day-square.future {
+    background: var(--future-color);
+    color: var(--text-color);
+}
+
+.day-square .day-name {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.day-square .day-number {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.day-square .day-content {
+    font-size: 0.7em;
+    text-align: center;
+    padding: 0 6px;
+    word-break: break-word;
+    line-height: 1.2;
+    overflow: hidden;
+    max-height: 40px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* 컨트롤 버튼들 */
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* 모달 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--modal-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--background-color);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.close-btn:hover {
+    opacity: 1;
+}
+
+.modal h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+#modal-textarea, #export-data {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+#modal-textarea:focus, #export-data:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* 중요도 선택 */
+.importance-section {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    background: var(--future-color);
+    border: 1px solid var(--border-color);
+}
+
+.importance-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.star-rating {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.star {
+    font-size: 2em;
+    color: #ddd;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.star:hover {
+    transform: scale(1.1);
+}
+
+.star.active {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.star.hover {
+    color: #ffed4e;
+}
+
+.rating-text {
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* 일별 네모에 별점 표시 */
+.day-square .importance-stars {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 0.8em;
+    color: #ffd700;
+    text-shadow: 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+/* 주별/월별 네모의 중요한 일정 목록 */
+.important-items {
+    font-size: 0.7em;
+    line-height: 1.1;
+    max-height: 70%;
+    overflow: hidden;
+}
+
+.important-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1px;
+    padding: 1px 0;
+    max-height: 20px;
+    overflow: hidden;
+}
+
+.important-item .item-stars {
+    color: #ffd700;
+    margin-right: 2px;
+    font-size: 0.9em;
+    flex-shrink: 0;
+}
+
+.important-item .item-text {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.1;
+    font-size: 0.9em;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.screen {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--future-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-color);
+}

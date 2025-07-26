@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삶을 정리하는 네모들</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- 초기 설정 화면 -->
+    <div id="setup-screen" class="screen">
+        <div class="setup-container">
+            <h1 id="setup-title">삶을 정리하는 네모들</h1>
+            <p id="setup-subtitle">당신의 삶을 시각적으로 정리하고 계획해보세요</p>
+            
+            <div class="input-group">
+                <label for="birth-date">생년월일:</label>
+                <input type="date" id="birth-date" placeholder="1990-01-01">
+            </div>
+            
+            <div class="input-group">
+                <label for="life-expectancy">기대 수명:</label>
+                <input type="number" id="life-expectancy" min="50" max="120" value="80" placeholder="80">
+            </div>
+
+            <!-- 학력 및 기타 기간 입력 -->
+            <div class="education-section">
+                <h3>학력 및 주요 기간 입력</h3>
+                <p class="education-subtitle">해당하는 기간을 입력하면 네모에 색상으로 표시됩니다.</p>
+                
+                <div class="education-grid">
+                    <div class="education-item">
+                        <label class="education-label">
+                            <span class="color-indicator daycare"></span>
+                            어린이집
+                        </label>
+                        <div class="period-inputs">
+                            <input type="month" id="daycare-start" class="period-input">
+                            <span>~</span>
+                            <input type="month" id="daycare-end" class="period-input">
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <label class="education-label">
+                            <span class="color-indicator kindergarten"></span>
+                            유치원
+                        </label>
+                        <div class="period-inputs">
+                            <input type="month" id="kindergarten-start" class="period-input">
+                            <span>~</span>
+                            <input type="month" id="kindergarten-end" class="period-input">
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <label class="education-label">
+                            <span class="color-indicator elementary"></span>
+                            초등학교
+                        </label>
+                        <div class="period-inputs">
+                            <input type="month" id="elementary-start" class="period-input">
+                            <span>~</span>
+                            <input type="month" id="elementary-end" class="period-input">
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <label class="education-label">
+                            <span class="color-indicator middle"></span>
+                            중학교
+                        </label>
+                        <div class="period-inputs">
+                            <input type="month" id="middle-start" class="period-input">
+                            <span>~</span>
+                            <input type="month" id="middle-end" class="period-input">
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <label class="education-label">
+                            <span class="color-indicator high"></span>
+                            고등학교
+                        </label>
+                        <div class="period-inputs">
+                            <input type="month" id="high-start" class="period-input">
+                            <span>~</span>
+                            <input type="month" id="high-end" class="period-input">
+                        </div>
+                    </div>
+
+                    <!-- 대학교 섹션 -->
+                    <div class="education-section-header">
+                        <label class="education-label">
+                            <span class="color-indicator university"></span>
+                            대학교
+                        </label>
+                        <button type="button" class="add-btn" id="add-university-btn">+ 추가</button>
+                    </div>
+                    <div id="university-container" class="education-container">
+                        <div class="education-item" data-type="university" data-index="0">
+                            <div class="period-inputs">
+                                <input type="month" id="university-0-start" class="period-input" data-type="university" data-index="0" data-field="start">
+                                <span>~</span>
+                                <input type="month" id="university-0-end" class="period-input" data-type="university" data-index="0" data-field="end">
+                                <button type="button" class="remove-btn" data-type="university" data-index="0">×</button>
+                            </div>
+                            <input type="text" id="university-0-name" class="other-name-input" data-type="university" data-index="0" data-field="name" placeholder="대학교명 (선택사항)">
+                            
+                            <!-- 휴학 기간 섹션 -->
+                            <div class="leave-section">
+                                <div class="leave-header">
+                                    <label class="leave-label">휴학 기간</label>
+                                    <button type="button" class="add-leave-btn" data-university-index="0">+ 휴학 추가</button>
+                                </div>
+                                <div class="leave-container" data-university-index="0">
+                                    <!-- 휴학 기간들이 동적으로 추가됩니다 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 기타 기관 섹션 -->
+                    <div class="education-section-header">
+                        <label class="education-label">
+                            <span class="color-indicator other"></span>
+                            기타 기관 (대학원/군대/직장 등)
+                        </label>
+                        <button type="button" class="add-btn" id="add-other-btn">+ 추가</button>
+                    </div>
+                    <div id="other-container" class="education-container">
+                        <div class="education-item" data-type="other" data-index="0">
+                            <div class="period-inputs">
+                                <input type="month" id="other-0-start" class="period-input" data-type="other" data-index="0" data-field="start">
+                                <span>~</span>
+                                <input type="month" id="other-0-end" class="period-input" data-type="other" data-index="0" data-field="end">
+                                <button type="button" class="remove-btn" data-type="other" data-index="0">×</button>
+                            </div>
+                            <input type="text" id="other-0-name" class="other-name-input" data-type="other" data-index="0" data-field="name" placeholder="기관명 (필수)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="start-btn" class="primary-btn">시작하기</button>
+        </div>
+    </div>
+
+    <!-- 메인 화면 -->
+    <div id="main-screen" class="screen hidden">
+        <header class="main-header">
+            <h1>삶을 정리하는 네모들</h1>
+            <div class="year-navigation">
+                <button id="prev-year" class="nav-btn">&lt;</button>
+                <select id="year-selector"></select>
+                <button id="next-year" class="nav-btn">&gt;</button>
+            </div>
+            <div class="header-info">
+                <span id="current-year-display"></span>
+                <span id="age-display"></span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div id="months-grid" class="months-grid">
+                <!-- 월별 네모들이 동적으로 생성됩니다 -->
+            </div>
+        </main>
+
+        <div class="controls">
+            <button id="settings-btn" class="secondary-btn">설정 변경</button>
+            <button id="export-btn" class="secondary-btn">데이터 내보내기</button>
+            <button id="theme-toggle" class="secondary-btn">테마 변경</button>
+            <button id="reset-btn" class="secondary-btn">초기화</button>
+        </div>
+    </div>
+
+    <!-- 주별 세부 화면 -->
+    <div id="week-screen" class="screen hidden">
+        <header class="week-header">
+            <button id="back-to-month" class="back-btn">&lt; 월별 화면으로</button>
+            <h2 id="week-title"></h2>
+        </header>
+
+        <main class="week-content">
+            <div id="weeks-grid" class="weeks-grid">
+                <!-- 주별 네모들이 동적으로 생성됩니다 -->
+            </div>
+        </main>
+    </div>
+
+    <!-- 일별 세부 화면 -->
+    <div id="day-screen" class="screen hidden">
+        <header class="day-header">
+            <button id="back-to-week" class="back-btn">&lt; 주별 화면으로</button>
+            <h2 id="day-title"></h2>
+        </header>
+
+        <main class="day-content">
+            <div id="days-grid" class="days-grid">
+                <!-- 일별 네모들이 동적으로 생성됩니다 -->
+            </div>
+        </main>
+    </div>
+
+    <!-- 모달 창 -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title"></h3>
+            <textarea id="modal-textarea" placeholder="내용을 입력하세요..."></textarea>
+            
+            <!-- 중요도 선택 (일별 메모에만 표시) -->
+            <div id="importance-section" class="importance-section hidden">
+                <label class="importance-label">중요도:</label>
+                <div class="star-rating">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
+                <span id="rating-text" class="rating-text">중요도를 선택하세요</span>
+            </div>
+            
+            <div class="modal-buttons">
+                <button id="save-btn" class="primary-btn">저장</button>
+                <button id="cancel-btn" class="secondary-btn">취소</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 데이터 내보내기 모달 -->
+    <div id="export-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>데이터 내보내기</h3>
+            <p>아래 JSON 데이터를 복사하여 백업하세요:</p>
+            <textarea id="export-data" readonly></textarea>
+            <div class="modal-buttons">
+                <button id="copy-data-btn" class="primary-btn">복사하기</button>
+                <button id="close-export-btn" class="secondary-btn">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/data-manager.js"></script>
+    <script src="scripts/ui-controller.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

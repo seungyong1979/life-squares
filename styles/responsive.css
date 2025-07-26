@@ -1,0 +1,520 @@
+/* 반응형 디자인 */
+
+/* 태블릿 화면 (768px 이하) */
+@media (max-width: 768px) {
+    .screen {
+        padding: 15px;
+    }
+
+    /* 초기 설정 화면 */
+    .setup-container {
+        padding: 30px 20px;
+        margin: 0 10px;
+    }
+
+    .setup-container h1 {
+        font-size: 2em;
+    }
+
+    /* 메인 헤더 */
+    .main-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .main-header h1 {
+        font-size: 1.8em;
+        text-align: center;
+    }
+
+    .year-navigation {
+        justify-content: center;
+    }
+
+    .header-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* 월별 그리드 - 3x4로 변경 */
+    .months-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        max-width: 100%;
+    }
+
+    .month-square {
+        min-height: 120px;
+        border-radius: 12px;
+    }
+
+    .month-square .month-name {
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+
+    .month-square .month-content {
+        font-size: 0.8em;
+        padding: 0 8px;
+    }
+
+    /* 주별 그리드 */
+    .weeks-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-width: 400px;
+    }
+
+    .week-square {
+        min-height: 100px;
+        aspect-ratio: 2;
+    }
+
+    /* 일별 그리드 */
+    .days-grid {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 8px;
+        max-width: 100%;
+    }
+
+    .day-square {
+        min-height: 80px;
+        border-radius: 8px;
+    }
+
+    .day-square .day-name {
+        font-size: 0.7em;
+        margin-bottom: 4px;
+    }
+
+    .day-square .day-number {
+        font-size: 0.9em;
+        margin-bottom: 2px;
+    }
+
+    .day-square .day-content {
+        font-size: 0.6em;
+    }
+
+    .day-square .importance-stars {
+        font-size: 0.6em;
+        top: 3px;
+        right: 3px;
+    }
+
+    .important-items {
+        font-size: 0.6em;
+    }
+
+    .important-item .item-stars {
+        font-size: 0.7em;
+    }
+
+    /* 교육 기간 라벨 태블릿 최적화 */
+    .education-label-indicator {
+        font-size: 0.55em;
+        padding: 1px 3px;
+    }
+    
+    .education-label-indicator.secondary-label {
+        font-size: 0.5em;
+    }
+
+    /* 컨트롤 버튼 */
+    .controls {
+        margin-top: 30px;
+    }
+
+    .secondary-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+        margin: 5px 3px;
+    }
+
+    /* 모달 */
+    .modal-content {
+        padding: 25px 20px;
+        margin: 0 10px;
+    }
+
+    #modal-textarea, #export-data {
+        min-height: 120px;
+        font-size: 13px;
+    }
+}
+
+/* 모바일 화면 (480px 이하) */
+@media (max-width: 480px) {
+    .screen {
+        padding: 10px;
+    }
+
+    /* 초기 설정 화면 */
+    .setup-container {
+        padding: 25px 15px;
+        margin: 0 5px;
+    }
+
+    .setup-container h1 {
+        font-size: 1.8em;
+    }
+
+    .input-group input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .primary-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+
+    /* 메인 헤더 */
+    .main-header {
+        padding: 10px 0;
+        margin-bottom: 20px;
+    }
+
+    .main-header h1 {
+        font-size: 1.5em;
+    }
+
+    .nav-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    #year-selector {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    /* 월별 그리드 - 2x6으로 변경 */
+    .months-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .month-square {
+        min-height: 100px;
+        border-radius: 10px;
+        border-width: 2px;
+    }
+
+    .month-square .month-name {
+        font-size: 0.9em;
+        margin-bottom: 6px;
+    }
+
+    .month-square .month-content {
+        font-size: 0.7em;
+        padding: 0 6px;
+    }
+
+    /* 주별 화면 */
+    .week-header {
+        padding: 15px 0;
+        margin-bottom: 20px;
+    }
+
+    .week-header h2 {
+        font-size: 1.3em;
+    }
+
+    .back-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .weeks-grid {
+        gap: 12px;
+        max-width: 100%;
+    }
+
+    .week-square {
+        min-height: 80px;
+        aspect-ratio: 2.5;
+        border-radius: 10px;
+    }
+
+    .week-square .week-name {
+        font-size: 0.9em;
+        margin-bottom: 6px;
+    }
+
+    .week-square .week-content {
+        font-size: 0.7em;
+        padding: 0 6px;
+    }
+
+    /* 일별 그리드 */
+    .days-grid {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 6px;
+    }
+
+    .day-square {
+        min-height: 70px;
+        border-radius: 6px;
+    }
+
+    .day-square .day-name {
+        font-size: 0.6em;
+        margin-bottom: 2px;
+    }
+
+    .day-square .day-number {
+        font-size: 0.8em;
+        margin-bottom: 1px;
+    }
+
+    .day-square .day-content {
+        font-size: 0.5em;
+        padding: 0 4px;
+    }
+
+    .day-square .importance-stars {
+        font-size: 0.5em;
+        top: 2px;
+        right: 2px;
+    }
+
+    .important-items {
+        font-size: 0.5em;
+    }
+
+    .important-item .item-stars {
+        font-size: 0.6em;
+    }
+
+    /* 교육 기간 라벨 모바일 최적화 */
+    .education-label-indicator {
+        font-size: 0.45em;
+        padding: 1px 2px;
+    }
+    
+    .education-label-indicator.secondary-label {
+        font-size: 0.4em;
+    }
+    
+    .education-labels-container {
+        top: 2px;
+        left: 2px;
+        max-width: calc(100% - 4px);
+        gap: 1px;
+    }
+
+    /* 별점 선택 모바일 최적화 */
+    .star {
+        font-size: 1.8em;
+        touch-action: manipulation;
+    }
+
+    /* 컨트롤 버튼 */
+    .controls {
+        margin-top: 25px;
+    }
+
+    .secondary-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        margin: 3px 2px;
+    }
+
+    /* 모달 */
+    .modal-content {
+        padding: 20px 15px;
+        margin: 0 5px;
+        border-radius: 12px;
+    }
+
+    .modal h3 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    #modal-textarea, #export-data {
+        min-height: 100px;
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .modal-buttons {
+        margin-top: 15px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .modal-buttons .primary-btn,
+    .modal-buttons .secondary-btn {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* 매우 작은 모바일 화면 (360px 이하) */
+@media (max-width: 360px) {
+    .setup-container h1 {
+        font-size: 1.6em;
+    }
+
+    .main-header h1 {
+        font-size: 1.3em;
+    }
+
+    .months-grid {
+        gap: 10px;
+    }
+
+    .month-square {
+        min-height: 90px;
+    }
+
+    .month-square .month-name {
+        font-size: 0.8em;
+    }
+
+    .month-square .month-content {
+        font-size: 0.65em;
+    }
+
+    .weeks-grid {
+        gap: 10px;
+    }
+
+    .week-square {
+        min-height: 70px;
+    }
+
+    .week-square .week-name {
+        font-size: 0.8em;
+    }
+
+    .week-square .week-content {
+        font-size: 0.65em;
+    }
+}
+
+/* 가로 모드 대응 (모바일) */
+@media (max-width: 768px) and (orientation: landscape) {
+    .setup-container {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .months-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .month-square {
+        min-height: 80px;
+    }
+
+    .weeks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .week-square {
+        min-height: 70px;
+        aspect-ratio: 1.5;
+    }
+}
+
+/* 고해상도 화면 (1200px 이상) */
+@media (min-width: 1200px) {
+    .months-grid {
+        max-width: 1000px;
+        gap: 25px;
+    }
+
+    .month-square {
+        min-height: 180px;
+        border-radius: 20px;
+    }
+
+    .month-square .month-name {
+        font-size: 1.3em;
+    }
+
+    .month-square .month-content {
+        font-size: 1em;
+    }
+
+    .weeks-grid {
+        max-width: 700px;
+        gap: 25px;
+    }
+
+    .week-square {
+        min-height: 140px;
+        border-radius: 20px;
+    }
+
+    .modal-content {
+        max-width: 600px;
+        padding: 40px;
+    }
+}
+
+/* 인쇄 스타일 */
+@media print {
+    .controls,
+    .modal,
+    .nav-btn,
+    .secondary-btn {
+        display: none !important;
+    }
+
+    .screen {
+        padding: 0;
+        min-height: auto;
+    }
+
+    .main-header {
+        border-bottom: 2px solid #000;
+        margin-bottom: 20px;
+    }
+
+    .months-grid {
+        page-break-inside: avoid;
+    }
+
+    .month-square {
+        border: 2px solid #000;
+        box-shadow: none;
+        background: white !important;
+        color: black !important;
+    }
+
+    .month-square.current {
+        background: #f0f0f0 !important;
+    }
+}
+
+/* 접근성 개선 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 고대비 모드 */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000000;
+        --past-color: #000000;
+        --current-color: #ffff00;
+        --future-color: #ffffff;
+    }
+
+    .month-square,
+    .week-square {
+        border-width: 3px;
+    }
+}
